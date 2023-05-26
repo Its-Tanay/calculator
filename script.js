@@ -94,12 +94,20 @@ function appendEquals(){
 function appendClear(){
     if (currentText === "") return;
 
-    if(firstOperand !== "" && secondOperand === "" && operatorValue === "" ) {
-        operatorValue = "";
-        currentText = firstOperand;
+    if(currentText !== "" && secondOperand === "" && operatorValue === ""){
+        firstOperand = "";
+        currentText = currentText.slice(0, -1);
+        display.textContent = currentText;
     }
-    currentText = currentText.slice(0, -1);
-    display.textContent = currentText;
+    else if(firstOperand !== "" && secondOperand === "" && operatorValue !== "" && (currentText.length === firstOperand.length + 1)){
+        operatorValue = "";
+        currentText = currentText.slice(0, -1);
+        display.textContent = currentText;
+    }
+    else if(firstOperand !== "" && (currentText.length > firstOperand.length + 1) && operatorValue !== ""){
+        currentText = currentText.slice(0, -1);
+        display.textContent = currentText;
+    }
 };
 
 
