@@ -130,3 +130,19 @@ html {
     text-decoration: underline;
     outline: none;
   }
+
+  .Calc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: lighter;
+    color:#ff4081;
+    letter-spacing: 8px;
+  }
+
+  .ulator{
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: lighter;
+    color: #ffffff;
+    letter-spacing: 8px;
+  }
