@@ -88,7 +88,6 @@ html {
 }
   
 #btnEq {
-    grid-column: span 2;
     background-color: #ff4081;
 }
   
@@ -102,7 +101,8 @@ html {
   #btn7,
   #btn8,
   #btn9,
-  #btnDot {
+  #btnDot
+  #negate {
     background-color: #5c5c5c;
   }
   

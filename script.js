@@ -10,12 +10,17 @@ const equalsButton = document.querySelector(".equal");
 const clearButton = document.querySelector(".clear");
 const allClearButton = document.querySelector(".allClear");
 const display = document.querySelector("#display");
+const negativeButton = document.querySelector("#negate");
 
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
             appendNumbers(button.textContent);
             display.textContent = currentText;
     });
+});
+
+negativeButton.addEventListener("click", () => {
+    appendNegative();
 });
 
 operatorButtons.forEach((button) => {
@@ -110,6 +115,24 @@ function appendClear(){
     }
 };
 
+function appendNegative(){
+    if(currentText === "") return;
+
+    if(currentText !== "" && operatorValue === "" && secondOperand === ""){
+        currentText = Number(currentText) * -1;
+        currentText = currentText.toString();
+        display.textContent = currentText;
+    }
+
+    if(firstOperand !== "" && operatorValue !== "" && secondOperand === "" && (currentText.length === firstOperand.length + 1)) return;
+
+    if(firstOperand !== "" && operatorValue !== "" && secondOperand === "" && (currentText.length > firstOperand.length + 1)){
+        currentText = Number(currentText.slice(firstOperand.length + 1)) * -1;
+        currentText = firstOperand + operatorValue + currentText;
+        display.textContent = currentText;
+    }
+        
+}
 
 function appendNumbers(number){
     if (number === "." && currentText.slice(firstOperand.length + 1).includes(".") && currentText.slice(-firstOperand.length)) return;
