@@ -45,6 +45,7 @@ html {
     background-color: #333333;
     border-radius: 20px;
     padding: 5px;
+    overflow: scroll;
   }
   
 .display p {
